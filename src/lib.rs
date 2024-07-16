@@ -6,6 +6,7 @@ use std::{
 };
 
 use tauri::{
+    Emitter,
     plugin::{Builder, TauriPlugin},
     Runtime,
 };
