@@ -1,3 +1,4 @@
+use tauri::Emitter;
 use std::{
     borrow::Cow,
     io::{Read, Write},
@@ -6,7 +7,6 @@ use std::{
 };
 
 use tauri::{
-    Emitter,
     plugin::{Builder, TauriPlugin},
     Runtime,
 };
