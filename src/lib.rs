@@ -213,12 +213,12 @@ mod plugin_impl {
 
         crate::start_with_config(config, move |url| match url::Url::parse(&url) {
             Ok(_) => {
-                if let Err(emit_err) = emitTo("main", "oauth://url", url) {
+                if let Err(emit_err) = window.emit("oauth://url", url) {
                     log::error!("Error emitting oauth://url event: {}", emit_err)
                 };
             }
             Err(err) => {
-                if let Err(emit_err) = emitTo("main", "oauth://invalid-url", err.to_string()) {
+                if let Err(emit_err) = window.emit("oauth://invalid-url", err.to_string()) {
                     log::error!("Error emitting oauth://invalid-url event: {}", emit_err)
                 };
             }
