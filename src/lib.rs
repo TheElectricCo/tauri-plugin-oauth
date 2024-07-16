@@ -1,4 +1,3 @@
-use tauri::Emitter;
 use std::{
     borrow::Cow,
     io::{Read, Write},
@@ -195,7 +194,7 @@ pub fn cancel(port: u16) -> Result<(), std::io::Error> {
 }
 
 mod plugin_impl {
-    use tauri::{Manager, Runtime, Window};
+    use tauri::{Manager, Runtime, Window, Emitter};
 
     #[tauri::command]
     pub(crate) fn start<R: Runtime>(
